@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="taskreminder.css" />
+
+    <title>Task Reminder</title>
+  </head>
+  <body>
+    <nav>
+      <img src="" alt="Task Logo" />
+      <div>
+        <a href="#">Home</a>
+        <a href="#">Add</a>
+        <a href="#">Delete</a>
+      </div>
+    </nav>
+    <main>
+      <h1>My To do List</h1>
+      <p ><marquee behavior="" direction="" id="firstPara"></marquee></p>
+
+      <section id="section-container-1">
+        <h2>Add a new task</h2>
+        <div>
+          <label for="taskInput">Tasks</label>
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter your task here..."
+          />
+        </div>
+
+        <div id="btn-container">
+          <button id="addTaskBtn" type="button">
+            <span class="material-symbols-outlined"> add </span>Add Task
+          </button>
+          <button type="button" id="deleteBtn">
+            <span class="material-symbols-outlined"> delete </span>Delete task
+          </button>
+        </div>
+      </section>
+      <br />
+      <div id="taskItems">
+        <h2>My Task</h2>
+        <ol id="taskList"></ol>
+      </div>
+    </main>
+    <script src="taskReminder.js"></script>
+  </body>
+</html>
