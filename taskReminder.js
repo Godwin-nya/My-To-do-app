@@ -10,24 +10,40 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Please enter a task!");
       return;
     }
-    //new list items
-    const li = document.createElement("li");
-    li.textContent = taskText;
 
-    // created aremove button
+    const list = document.createElement("li");
+
+    // A button to edit a task.
+    const textSpan = document.createElement("span");
+    textSpan.textContent = taskText;
+    list.appendChild(textSpan);
+
+    // the edit button
+    const editButton = document.createElement("button");
+    editButton.innerHTML = `<span class="material-symbols-outlined"> edit </span>`;
+    editButton.classList.add("edit-btn");
+    //set onclick event to edit the text
+    editButton.onclick = function () {
+      const updatedText = prompt("Edit your task:", textSpan.textContent);
+      if (updatedText !== null && updatedText.trim() !== "") {
+        textSpan.textContent = updatedText.trim();
+      }else{updatedText}
+    };
+
+    // created a remove button
     const removeButton = document.createElement("button");
     removeButton.innerHTML = `<span class="material-symbols-outlined">delete</span>`;
     removeButton.classList.add("remove-btn");
 
     //set onclick event to remove the task
     removeButton.onclick = function () {
-      taskList.removeChild(li);
+      taskList.removeChild(list);
     };
-    //append remove button to the list item
-    li.appendChild(removeButton);
 
-    //append list item tothe task list
-    taskList.appendChild(li);
+    //append remove button to the list item
+    list.appendChild(removeButton);
+    list.appendChild(editButton);
+    taskList.appendChild(list);
 
     //clear the input field
     taskInput.value = "";
@@ -56,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Stay organised, get things done.",
     "Keep it here, we'll remind you!",
     "Write and wait, get notified",
-    'I keep it while you sleep!'
+    "I keep it while you sleep!",
   ];
 
   let getRandomPara = Math.floor(Math.random() * para.length);
