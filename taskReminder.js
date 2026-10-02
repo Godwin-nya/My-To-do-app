@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     //append remove button to the list item
-    list.appendChild(removeButton);
     list.appendChild(editButton);
+    list.appendChild(removeButton);
     taskList.appendChild(list);
 
     //clear the input field
@@ -68,11 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //A collection of paragraph elements to use under H1
   const para = [
-    "A reminder, your daily friend!",
+    "A reminder is your daily friend!",
     "Stay organised, get things done.",
     "Keep it here, we'll remind you!",
     "Write and wait, get notified",
     "I keep it while you sleep!",
+    "What are we up to today?"
   ];
 
   let getRandomPara = Math.floor(Math.random() * para.length);
