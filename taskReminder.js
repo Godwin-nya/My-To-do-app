@@ -39,8 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //set onclick event to remove the task
     removeButton.onclick = function () {
-      confirm("Are you sure you want to delete this task?");
-      taskList.removeChild(list);
+      const confirmRemove = confirm(
+        "Are you sure you want to delete this task?",
+      );
+      if (confirmRemove === true) {
+        taskList.removeChild(list);
+      } else {
+        taskInput.textContent;
+      }
     };
 
     //append remove button to the list item
