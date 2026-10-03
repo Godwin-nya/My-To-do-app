@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const updatedText = prompt("Edit your task:", textSpan.textContent);
       if (updatedText !== null && updatedText.trim() !== "") {
         textSpan.textContent = updatedText.trim();
-      }else{updatedText}
+      } else {
+        updatedText;
+      }
     };
 
     // created a remove button
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //set onclick event to remove the task
     removeButton.onclick = function () {
+      confirm("Are you sure you want to delete this task?");
       taskList.removeChild(list);
     };
 
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Keep it here, we'll remind you!",
     "Write and wait, get notified",
     "I keep it while you sleep!",
-    "What are we up to today?"
+    "What are we up to today?",
   ];
 
   let getRandomPara = Math.floor(Math.random() * para.length);
