@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
     list.appendChild(removeButton);
     taskList.appendChild(list);
 
+    const hideTaskInfo = document.getElementById("taskInfo");
+    hideTaskInfo.style.display = "none";
+
     //clear the input field
     taskInput.value = "";
   }
